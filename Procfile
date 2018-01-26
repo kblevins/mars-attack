@@ -1,1 +1,1 @@
-web: gunicorn mars-attack:app
+web: gunicorn mars_app:app
