@@ -68,7 +68,7 @@ def scrape():
         row_marker += 1
 
     # convert pandas table to html
-    facts_html = new_table.to_html()
+    facts_html = new_table.to_html(index=False)
 
     # get hemisphere photos
     hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -85,7 +85,7 @@ def scrape():
         browser.visit(h_url)
         h_html = browser.html
         h_soup = bs(h_html, 'html.parser')
-        hemi_link = h_soup.find('div', class_="downloads").find_all('li')[1].find('a')['href']
+        hemi_link = h_soup.find('div', class_="downloads").find_all('li')[0].find('a')['href']
         hemi_title = h_soup.find('h2', class_="title").text
         hemi_title = hemi_title.replace(" Enhanced", "")
         hemi_dict = {"title": hemi_title, "url": hemi_link}

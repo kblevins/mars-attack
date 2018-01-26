@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars Scrape</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    
+</head>
+<body>
+    <div class="parallax">
+    <div class="jumbotron" style="background-image: url({{ url_for('static', filename = 'martian.png') }})">
+
+            <h1>Welcome Earthling</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+
+
+    <div class = "container-fluid">
+        <div class="row newsbox">
+            <h1>The Latest from Mars</h1>
+            <h3>{{ mars_d.news }}</h3>
+            <p>{{ mars_d.story }}</p>
+        </div>
+    </div>
+
+    <div class = "container-fluid">
+        <div class = "row">
+            <div class = "col-sm-12 col-md-8">
+                <h1 style = "color: white;">Featured Image</h1>
+                <img src = {{ mars_d.image }} height = "500px" width = "600px" alt = "mars image">
+            </div>
+            <div class = "col-sm-12 col-md-4">
+                    <div style="height: 50px;">
+                </div>
+            </div>
+            <div class = "col-sm-12 col-md-4">
+                <div class = "wbox" style="background: white;">
+                <h2>Weather on Mars</h2>
+                <p>{{ mars_d.weather }}</p>
+            </div>
+            </div>
+            <div class = "col-sm-12 col-md-4">
+                    <div style="height: 50px;">
+                </div>
+            </div>
+            <div class = "col-sm-12 col-md-4">
+                <div class = "wbox" style="background: white; padding-bottom: 20px;">
+                <h2>Mars Facts</h2>
+                {{ mars_d.facts|safe}}
+            </div>
+            </div>
+        </div>
+    </div>
+
+<div class = "container-fluid">
+    <div class="row">
+        <h1 style = "color: white;">Mars Hemispheres</h1>
+    </div>
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="thumbnail">
+            <img src={{ mars_d.hemispheres[0].url }} height="450px" width="450px" alt={{ mars_d.hemispheres[0].title }}>
+        <div class="caption">
+          <h3>{{ mars_d.hemispheres[0].title }}</h3>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+            <div class="thumbnail">
+                  <img src={{ mars_d.hemispheres[1].url }} height="450px" width="450px" alt={{ mars_d.hemispheres[1].title }}>
+              <div class="caption">
+                <h3>{{ mars_d.hemispheres[1].title }}</h3>
+                </div>
+            </div>
+          </div>
+  </div>
+  <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="thumbnail">
+                <img src={{ mars_d.hemispheres[2].url }} height="450px" width="450px" alt={{ mars_d.hemispheres[2].title }}>
+            <div class="caption">
+              <h3>{{ mars_d.hemispheres[2].title }}</h3>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+                <div class="thumbnail">
+                      <img src={{ mars_d.hemispheres[3].url }} height="450px" width="450px" alt={{ mars_d.hemispheres[3].title }}>
+                  <div class="caption">
+                    <h3>{{ mars_d.hemispheres[3].title }}</h3>
+                    </div>
+                </div>
+              </div>
+      </div>
+
+</div>
+</div>
+    
+</body>
+</html>
+

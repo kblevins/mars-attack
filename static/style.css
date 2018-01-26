@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    margin: 0;
+}
+
+
+
+.parallax { 
+    /* The image used */
+    background-image: url("stars.jpeg");
+    /* Full height */
+    height: 100%;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+}
+
+.dataframe {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.jumbotron {
+    height: 300px;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-fluid {
+    padding: 5%;
+}
+
+.wbox {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.newsbox {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: linear-gradient(to top, #f2994a, #f2c94c);
+}
