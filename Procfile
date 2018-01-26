@@ -1,1 +1,1 @@
-web: gunicorn app:mars_app
+worker: python mars_app.py
