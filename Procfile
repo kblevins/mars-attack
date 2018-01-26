@@ -1,1 +1,1 @@
-worker: python mars_app.py
+web: gunicorn mars-attack:app
